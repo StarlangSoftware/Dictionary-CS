@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Dictionary\Trie" />
+      <Folder Include="Syllibification" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="turkish_dictionary.txt" />
+      <EmbeddedResource Include="turkish_dictionary.txt" />
+      <None Remove="turkish_misspellings.txt" />
+      <EmbeddedResource Include="turkish_misspellings.txt" />
+    </ItemGroup>
+
+</Project>
