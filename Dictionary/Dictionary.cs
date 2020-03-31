@@ -6,7 +6,7 @@ namespace Dictionary.Dictionary
     {
         protected List<Word> words;
         protected string filename;
-        protected IComparer<Word> comparator;
+        protected readonly IComparer<Word> comparator;
 
         /**
          * <summary>An empty constructor of {@link Dictionary} class.</summary>
