@@ -17,4 +17,8 @@
       <EmbeddedResource Include="turkish_misspellings.txt" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="NlpToolkit-Math" Version="1.0.0" />
+    </ItemGroup>
+
 </Project>

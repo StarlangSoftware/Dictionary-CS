@@ -69,13 +69,14 @@ namespace Dictionary.Dictionary
         {
             return name;
         }
-        
+
         /**
          * <summary>The charCount method returns the length of name variable.</summary>
          *
          * <returns>the length of name variable.</returns>
          */
-        public int CharCount() {
+        public int CharCount()
+        {
             return name.Length;
         }
 
@@ -94,7 +95,8 @@ namespace Dictionary.Dictionary
          *
          * <returns>name variable.</returns>
          */
-        public string GetName() {
+        public string GetName()
+        {
             return name;
         }
 
@@ -103,7 +105,8 @@ namespace Dictionary.Dictionary
          *
          * <param name="name">String input.</param>
          */
-        public void SetName(string name) {
+        public void SetName(string name)
+        {
             this.name = name;
         }
 
@@ -114,7 +117,8 @@ namespace Dictionary.Dictionary
          * <param name="surfaceForm">String input to check the first character.</param>
          * <returns>true if the character at first index of surfaceForm is a capital letter, false otherwise.</returns>
          */
-        public static bool IsCapital(string surfaceForm) {
+        public static bool IsCapital(string surfaceForm)
+        {
             return TurkishLanguage.UPPERCASE_LETTERS.IndexOf(surfaceForm[0]) != -1;
         }
 
@@ -129,8 +133,18 @@ namespace Dictionary.Dictionary
          * <param name="surfaceForm">String input to check.</param>
          * <returns>true if it is a punctuation, false otherwise.</returns>
          */
-        public static bool IsPunctuation(string surfaceForm) {
-            return surfaceForm == "." ||  surfaceForm == "..." ||  surfaceForm == "[" ||  surfaceForm == "]" ||  surfaceForm == "\u2026" ||  surfaceForm == "%" ||  surfaceForm == "&" ||  surfaceForm == "=" ||  surfaceForm == "\u0060\u0060" ||  surfaceForm == "\u0060" ||  surfaceForm == "''" ||  surfaceForm == "$" ||  surfaceForm == "!" ||  surfaceForm == "?" ||  surfaceForm == "," ||  surfaceForm == ":" ||  surfaceForm == "--" ||  surfaceForm == ";" ||  surfaceForm == "(" ||  surfaceForm == ")" ||  surfaceForm == "'" ||  surfaceForm == "\"" ||  surfaceForm == "\u201C" ||  surfaceForm == "\u2018" ||  surfaceForm == "\u201D" ||  surfaceForm == "…" ||  surfaceForm == "\u25CF" ||  surfaceForm == "/" ||  surfaceForm == "-" ||  surfaceForm == "+" ||  surfaceForm == "-LRB-" ||  surfaceForm == "-RRB-" ||  surfaceForm == "-LCB-" ||  surfaceForm == "-RCB-" ||  surfaceForm == "-LSB-" ||  surfaceForm == "-RSB-";
+        public static bool IsPunctuation(string surfaceForm)
+        {
+            return surfaceForm == "." || surfaceForm == "..." || surfaceForm == "[" || surfaceForm == "]" ||
+                   surfaceForm == "\u2026" || surfaceForm == "%" || surfaceForm == "&" || surfaceForm == "=" ||
+                   surfaceForm == "\u0060\u0060" || surfaceForm == "\u0060" || surfaceForm == "''" ||
+                   surfaceForm == "$" || surfaceForm == "!" || surfaceForm == "?" || surfaceForm == "," ||
+                   surfaceForm == ":" || surfaceForm == "--" || surfaceForm == ";" || surfaceForm == "(" ||
+                   surfaceForm == ")" || surfaceForm == "'" || surfaceForm == "\"" || surfaceForm == "\u201C" ||
+                   surfaceForm == "\u2018" || surfaceForm == "\u201D" || surfaceForm == "…" ||
+                   surfaceForm == "\u25CF" || surfaceForm == "/" || surfaceForm == "-" || surfaceForm == "+" ||
+                   surfaceForm == "-LRB-" || surfaceForm == "-RRB-" || surfaceForm == "-LCB-" ||
+                   surfaceForm == "-RCB-" || surfaceForm == "-LSB-" || surfaceForm == "-RSB-";
         }
 
         /**
@@ -140,7 +154,8 @@ namespace Dictionary.Dictionary
          * <param name="surfaceForm">String input to check.</param>
          * <returns>true if it equals to "bay" or "bayan", false otherwise.</returns>
          */
-        public static bool IsHonorific(string surfaceForm) {
+        public static bool IsHonorific(string surfaceForm)
+        {
             var lowerCase = surfaceForm.ToLower(new CultureInfo("tr"));
             return lowerCase == "bay" || lowerCase == "bayan";
         }
@@ -152,7 +167,8 @@ namespace Dictionary.Dictionary
          * <param name="surfaceForm">String input to check.</param>
          * <returns>true if it equals to "şirket", "corp", "inc.", or "co.", and false otherwise.</returns>
          */
-        public static bool IsOrganization(string surfaceForm) {
+        public static bool IsOrganization(string surfaceForm)
+        {
             var lowerCase = surfaceForm.ToLower(new CultureInfo("tr"));
             return lowerCase == "corp" || lowerCase == "inc." || lowerCase == "co.";
         }
@@ -164,9 +180,13 @@ namespace Dictionary.Dictionary
          * <param name="surfaceForm">String input to check.</param>
          * <returns>true if it equals to one of the dolar, sterlin, paunt, ons, ruble, mark, frank, yan, sent, yen' or $, and false otherwise.</returns>
          */
-        public static bool IsMoney(string surfaceForm) {
+        public static bool IsMoney(string surfaceForm)
+        {
             var lowerCase = surfaceForm.ToLower(new CultureInfo("tr"));
-            return lowerCase.StartsWith("dolar") || lowerCase.StartsWith("sterlin") || lowerCase.StartsWith("paunt") || lowerCase.StartsWith("ons") || lowerCase.StartsWith("ruble") || lowerCase.StartsWith("mark") || lowerCase.StartsWith("frank") || lowerCase == "yen" || lowerCase.StartsWith("sent") || lowerCase.StartsWith("cent") || lowerCase.StartsWith("yen'") || lowerCase.Contains("$");
+            return lowerCase.StartsWith("dolar") || lowerCase.StartsWith("sterlin") || lowerCase.StartsWith("paunt") ||
+                   lowerCase.StartsWith("ons") || lowerCase.StartsWith("ruble") || lowerCase.StartsWith("mark") ||
+                   lowerCase.StartsWith("frank") || lowerCase == "yen" || lowerCase.StartsWith("sent") ||
+                   lowerCase.StartsWith("cent") || lowerCase.StartsWith("yen'") || lowerCase.Contains("$");
         }
 
         /**
@@ -175,7 +195,8 @@ namespace Dictionary.Dictionary
          *
          * <returns>true if name is a punctuation.</returns>
          */
-        public bool IsPunctuation() {
+        public bool IsPunctuation()
+        {
             return name == "," || name == "." || name == "!" || name == "?" || name == ":"
                    || name == ";" || name == "\"" || name == "''" || name == "'" || name == "`"
                    || name == "``" || name == "..." || name == "-" || name == "--";
@@ -190,27 +211,47 @@ namespace Dictionary.Dictionary
          * <param name="surfaceForm">String input to check.</param>
          * <returns>true if it presents time, and false otherwise.</returns>
          */
-        public static bool IsTime(string surfaceForm) {
+        public static bool IsTime(string surfaceForm)
+        {
             var lowerCase = surfaceForm.ToLower(new CultureInfo("tr"));
-            if (new Regex( "(\\d\\d|\\d):(\\d\\d|\\d):(\\d\\d|\\d)").IsMatch(lowerCase) || new Regex("(\\d\\d|\\d):(\\d\\d|\\d)").IsMatch(lowerCase)) {
+            if (new Regex("(\\d\\d|\\d):(\\d\\d|\\d):(\\d\\d|\\d)").IsMatch(lowerCase) ||
+                new Regex("(\\d\\d|\\d):(\\d\\d|\\d)").IsMatch(lowerCase))
+            {
                 return true;
             }
-            if (lowerCase.StartsWith("ocak") || lowerCase.StartsWith("şubat") || lowerCase.StartsWith("mart") || lowerCase.StartsWith("nisan") || lowerCase.StartsWith("mayıs") || lowerCase.StartsWith("haziran") || lowerCase.StartsWith("temmuz") || lowerCase.StartsWith("ağustos") || lowerCase.StartsWith("eylül") || lowerCase.StartsWith("ekim") || lowerCase.StartsWith("kasım") || lowerCase == "aralık") {
+
+            if (lowerCase.StartsWith("ocak") || lowerCase.StartsWith("şubat") || lowerCase.StartsWith("mart") ||
+                lowerCase.StartsWith("nisan") || lowerCase.StartsWith("mayıs") || lowerCase.StartsWith("haziran") ||
+                lowerCase.StartsWith("temmuz") || lowerCase.StartsWith("ağustos") || lowerCase.StartsWith("eylül") ||
+                lowerCase.StartsWith("ekim") || lowerCase.StartsWith("kasım") || lowerCase == "aralık")
+            {
                 return true;
             }
-            if (lowerCase == "pazar" || lowerCase == "salı" || lowerCase.StartsWith("çarşamba") || lowerCase.StartsWith("perşembe") || lowerCase == "cuma" || lowerCase.StartsWith("cumartesi") || lowerCase.StartsWith("pazartesi")) {
+
+            if (lowerCase == "pazar" || lowerCase == "salı" || lowerCase.StartsWith("çarşamba") ||
+                lowerCase.StartsWith("perşembe") || lowerCase == "cuma" || lowerCase.StartsWith("cumartesi") ||
+                lowerCase.StartsWith("pazartesi"))
+            {
                 return true;
             }
-            if (lowerCase.Contains("'")) {
+
+            if (lowerCase.Contains("'"))
+            {
                 lowerCase = lowerCase.Substring(0, lowerCase.IndexOf("'"));
             }
-            try {
+
+            try
+            {
                 var time = int.Parse(lowerCase);
-                if (time > 1900 && time < 2200) {
+                if (time > 1900 && time < 2200)
+                {
                     return true;
                 }
-            } catch (ArgumentException nfe) {
             }
+            catch (ArgumentException)
+            {
+            }
+
             return false;
         }
 
@@ -221,11 +262,14 @@ namespace Dictionary.Dictionary
          * <param name="sourceArray">String {@link java.lang.reflect.Array}.</param>
          * <returns>Word type {@link java.lang.reflect.Array}.</returns>
          */
-        public static Word[] ToWordArray(string[] sourceArray) {
+        public static Word[] ToWordArray(string[] sourceArray)
+        {
             var result = new Word[sourceArray.Length];
-            for (var i = 0; i < sourceArray.Length; i++) {
+            for (var i = 0; i < sourceArray.Length; i++)
+            {
                 result[i] = new Word(sourceArray[i]);
             }
+
             return result;
         }
 
@@ -235,12 +279,12 @@ namespace Dictionary.Dictionary
          *
          * <returns>Word type {@link ArrayList}.</returns>
          */
-        public List<Word> ToCharacters() {
+        public List<Word> ToCharacters()
+        {
             var characters = new List<Word>();
             foreach (var t in name)
                 characters.Add(new Word("" + t));
             return characters;
         }
-
     }
 }
