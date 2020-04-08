@@ -78,7 +78,12 @@ namespace Dictionary.Dictionary.Trie
          */
         public TrieNode GetChild(char ch)
         {
-            return _children[ch];
+            if (_children.ContainsKey(ch))
+            {
+                return _children[ch];
+            }
+
+            return null;
         }
 
         /**
