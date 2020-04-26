@@ -2,6 +2,10 @@
 
 This resource is a dictionary of Modern Turkish, comprised of the definitions of over 50.000 individual entries. Each entry is matched with its corresponding synset (set of synonymous words and expressions) in the Turkish WordNet, KeNet.
 
+For Developers
+============
+You can also see [Java](https://github.com/olcaytaner/Dictionary), [Python](https://github.com/olcaytaner/Dictionary-Py), or [C++](https://github.com/olcaytaner/Dictionary-CPP) repository.
+
 Detailed Description
 ============
 + [TxtDictionary](#txtdictionary)
