@@ -51,6 +51,11 @@ namespace Dictionary.Syllibification
                         // The previous character was also a consonant.
                         if (!TurkishLanguage.IsVowel(tempSyl[0]))
                         {
+                            if (_syllables.Count == 0)
+                            {
+                                sbSyllable += c;
+                                continue;
+                            }
                             var lastPos = _syllables.Count - 1;
                             var str = _syllables[lastPos].GetText();
                             str += tempSyl;
@@ -62,7 +67,7 @@ namespace Dictionary.Syllibification
 
                             // Update previous syllable.
                             _syllables[lastPos] =  new Syllable(str);
-                            sbSyllable = "" + c;
+                            sbSyllable = "";
                         }
                     }
 

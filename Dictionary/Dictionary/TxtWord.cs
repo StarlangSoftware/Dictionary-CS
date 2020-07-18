@@ -831,7 +831,7 @@ namespace Dictionary.Dictionary
          *
          * <returns>true if flags {@link ArrayList} contains IS_UDD.</returns>
          */
-        public bool lastIDropsAndNotDropDuringSuffixation()
+        public bool LastIDropsAndNotDropDuringSuffixation()
         {
             /*
              *The bare-form includes vowel epenthesis, therefore the last inserted vowel can (or can not) drop during suffixation. e.g. Kadir
