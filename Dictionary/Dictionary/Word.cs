@@ -248,7 +248,7 @@ namespace Dictionary.Dictionary
                     return true;
                 }
             }
-            catch (ArgumentException)
+            catch (FormatException)
             {
             }
 

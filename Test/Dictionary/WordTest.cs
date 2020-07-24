@@ -190,6 +190,7 @@ namespace Test.Dictionary
             Assert.False(Word.IsTime("1834"));
             Assert.False(Word.IsTime("2201"));
             Assert.True(Word.IsTime("1934"));
+            Assert.False(Word.IsTime("devasa"));
         }
     }
 }
