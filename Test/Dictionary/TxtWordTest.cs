@@ -35,25 +35,25 @@ namespace Test.Dictionary
             Assert.AreEqual(5, verbs["F2P1-NO-REF"]);
             Assert.AreEqual(1, verbs["F3P1-NO-REF"]);
             Assert.AreEqual(1, verbs["F4P1-NO-REF"]);
-            Assert.AreEqual(17, verbs["F4PR-NO-REF"]);
-            Assert.AreEqual(3, verbs["F4PL-NO-REF"]);
-            Assert.AreEqual(74, verbs["F4PW-NO-REF"]);
-            Assert.AreEqual(11, verbs["F5PL-NO-REF"]);
-            Assert.AreEqual(121, verbs["F5PR-NO-REF"]);
+            Assert.AreEqual(14, verbs["F4PR-NO-REF"]);
+            Assert.AreEqual(2, verbs["F4PL-NO-REF"]);
+            Assert.AreEqual(67, verbs["F4PW-NO-REF"]);
+            Assert.AreEqual(10, verbs["F5PL-NO-REF"]);
+            Assert.AreEqual(111, verbs["F5PR-NO-REF"]);
             Assert.AreEqual(1, verbs["F5PW-NO-REF"]);
             Assert.AreEqual(2, verbs["F1P1"]);
-            Assert.AreEqual(12, verbs["F2P1"]);
+            Assert.AreEqual(11, verbs["F2P1"]);
             Assert.AreEqual(4, verbs["F3P1"]);
             Assert.AreEqual(1, verbs["F4P1"]);
             Assert.AreEqual(1, verbs["F5P1"]);
             Assert.AreEqual(7, verbs["F6P1"]);
             Assert.AreEqual(2, verbs["F2PL"]);
-            Assert.AreEqual(51, verbs["F4PL"]);
-            Assert.AreEqual(19, verbs["F5PL"]);
-            Assert.AreEqual(185, verbs["F4PR"]);
-            Assert.AreEqual(849, verbs["F5PR"]);
-            Assert.AreEqual(1474, verbs["F4PW"]);
-            Assert.AreEqual(14, verbs["F5PW"]);
+            Assert.AreEqual(49, verbs["F4PL"]);
+            Assert.AreEqual(18, verbs["F5PL"]);
+            Assert.AreEqual(173, verbs["F4PR"]);
+            Assert.AreEqual(808, verbs["F5PR"]);
+            Assert.AreEqual(1396, verbs["F4PW"]);
+            Assert.AreEqual(13, verbs["F5PW"]);
         }
 
         [Test]
@@ -69,7 +69,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(29119, count);
+            Assert.AreEqual(30593, count);
         }
 
         [Test]
@@ -117,7 +117,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(106, count);
+            Assert.AreEqual(104, count);
         }
 
         [Test]
@@ -133,7 +133,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(106, count);
+            Assert.AreEqual(104, count);
         }
 
         [Test]
@@ -149,7 +149,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(8063, count);
+            Assert.AreEqual(9671, count);
         }
 
         [Test]
@@ -165,7 +165,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(49, count);
+            Assert.AreEqual(48, count);
         }
 
         [Test]
@@ -197,7 +197,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(4859, count);
+            Assert.AreEqual(5041, count);
         }
 
         [Test]
@@ -245,7 +245,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(55, count);
+            Assert.AreEqual(48, count);
         }
 
         [Test]
@@ -261,7 +261,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(1804, count);
+            Assert.AreEqual(1845, count);
         }
 
         [Test]
@@ -277,7 +277,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(49, count);
+            Assert.AreEqual(47, count);
         }
 
         [Test]
@@ -357,7 +357,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(19062, count);
+            Assert.AreEqual(19011, count);
         }
 
         [Test]
@@ -405,7 +405,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(316, count);
+            Assert.AreEqual(315, count);
         }
 
         [Test]
@@ -437,7 +437,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(5468 + 90 - 1, count);
+            Assert.AreEqual(5529, count);
         }
 
         [Test]
@@ -453,7 +453,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(16, count);
+            Assert.AreEqual(14, count);
         }
 
         [Test]
@@ -469,7 +469,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(90, count);
+            Assert.AreEqual(87, count);
         }
 
         [Test]
@@ -485,7 +485,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(5468, count);
+            Assert.AreEqual(5443, count);
         }
 
         [Test]
@@ -517,7 +517,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(34, count);
+            Assert.AreEqual(31, count);
         }
 
         [Test]
@@ -565,7 +565,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(170, count);
+            Assert.AreEqual(167, count);
         }
 
         [Test]
@@ -581,7 +581,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(7, count);
+            Assert.AreEqual(4, count);
         }
 
         [Test]
@@ -597,7 +597,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(20, count);
+            Assert.AreEqual(16, count);
         }
 
         [Test]
@@ -629,7 +629,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(12, count);
+            Assert.AreEqual(11, count);
         }
 
         [Test]
@@ -645,7 +645,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(1363, count);
+            Assert.AreEqual(1299, count);
         }
 
         [Test]
@@ -677,7 +677,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(52, count);
+            Assert.AreEqual(51, count);
         }
 
         [Test]
@@ -693,7 +693,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(207, count);
+            Assert.AreEqual(197, count);
         }
 
         [Test]
@@ -709,7 +709,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(6, count);
+            Assert.AreEqual(5, count);
         }
     }
 }
