@@ -42,7 +42,7 @@ namespace Test.Dictionary
         {
             Assert.AreEqual(29, lowerCaseDictionary.Size());
             Assert.AreEqual(58, mixedCaseDictionary.Size());
-            Assert.AreEqual(62112, dictionary.Size());
+            Assert.AreEqual(62116, dictionary.Size());
         }
 
         [Test]
