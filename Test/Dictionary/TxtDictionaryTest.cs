@@ -27,6 +27,7 @@ namespace Test.Dictionary
         {
             var trie = dictionary.PrepareTrie();
             Assert.True(trie.GetWordsWithPrefix("bana").Contains(new Word("ben")));
+            Assert.True(trie.GetWordsWithPrefix("sana").Contains(new Word("sen")));
             Assert.True(trie.GetWordsWithPrefix("metni").Contains(new Word("metin")));
             Assert.True(trie.GetWordsWithPrefix("ağzı").Contains(new Word("ağız")));
             Assert.True(trie.GetWordsWithPrefix("ayrıldı").Contains(new Word("ayır")));

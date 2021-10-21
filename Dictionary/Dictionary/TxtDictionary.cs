@@ -367,6 +367,11 @@ namespace Dictionary.Dictionary
                     result.AddWord("bana", word);
                 }
 
+                if (root == "sen")
+                {
+                    result.AddWord("sana", word);
+                }
+
                 rootWithoutLast = root.Substring(0, length - 1);
                 if (length > 1)
                 {
