@@ -111,6 +111,85 @@ namespace Dictionary.Dictionary
         }
 
         /**
+         * <summary>The BeforeLastVowel method takes a {@link string} stem as an input. It loops through the given stem and returns
+         * the second last vowel.</summary>
+         *
+         * <param name="stem">string input.</param>
+         * <returns>Vowel before the last vowel.</returns>
+         */
+        public static char BeforeLastVowel(string stem)
+        {
+            int i, before = 1;
+            var last = '0';
+            for (i = stem.Length - 1; i >= 0; i--)
+            {
+                if (TurkishLanguage.IsVowel(stem[i]))
+                {
+                    if (before == 1)
+                    {
+                        last = stem[i];
+                        before--;
+                        continue;
+                    }
+
+                    return stem[i];
+                }
+            }
+
+            return last;
+        }
+
+        /**
+         * <summary>The LastVowel method takes a {@link string} stem as an input. It loops through the given stem and returns
+         * the last vowel.</summary>
+         *
+         * <param name="stem">string input.</param>
+         * <returns>the last vowel.</returns>
+         */
+        public static char LastVowel(string stem)
+        {
+            int i;
+            for (i = stem.Length - 1; i >= 0; i--)
+            {
+                if (TurkishLanguage.IsVowel(stem[i]))
+                {
+                    return stem[i];
+                }
+            }
+
+            for (i = stem.Length - 1; i >= 0; i--)
+            {
+                if (stem[i] >= '0' && stem[i] <= '9')
+                {
+                    return stem[i];
+                }
+            }
+
+            return '0';
+        }
+
+        /**
+         * <summary>The lastPhoneme method takes a {@link string} stem as an input. It then returns the last phoneme of the given stem.</summary>
+         *
+         * <param name="stem">string input.</param>
+         * <returns>the last phoneme.</returns>
+         */
+        public static char LastPhoneme(string stem)
+        {
+            if (stem.Length == 0)
+            {
+                return ' ';
+            }
+
+            if (stem[stem.Length - 1] != '\'')
+            {
+                return stem[stem.Length - 1];
+            }
+
+            return stem[stem.Length - 2];
+        }
+
+        /**
          * <summary>The isCapital method takes a String surfaceForm as an input and returns true if the character at first index of surfaceForm
          * is a capital letter, false otherwise.</summary>
          *
