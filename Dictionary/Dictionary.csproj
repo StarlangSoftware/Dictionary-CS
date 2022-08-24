@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>1.0.12</PackageVersion>
+        <PackageVersion>1.0.13</PackageVersion>
         <PackageId>NlpToolkit-Dictionary</PackageId>
     </PropertyGroup>
 
@@ -17,6 +17,8 @@
       <EmbeddedResource Include="turkish_dictionary.txt" />
       <None Remove="turkish_misspellings.txt" />
       <EmbeddedResource Include="turkish_misspellings.txt" />
+      <None Remove="turkish_morphological_lexicon.txt" />
+      <EmbeddedResource Include="turkish_morphological_lexicon.txt" />
     </ItemGroup>
 
     <ItemGroup>

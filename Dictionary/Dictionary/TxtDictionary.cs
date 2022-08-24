@@ -27,6 +27,8 @@ namespace Dictionary.Dictionary
             LoadFromText(dictionaryStream);
             var misspellingsStream = assembly.GetManifestResourceStream("Dictionary.turkish_misspellings.txt");
             LoadMisspelledWords(misspellingsStream);
+            var morphologicalLexiconStream = assembly.GetManifestResourceStream("Dictionary.turkish_morphological_lexicon.txt");
+            LoadMorphologicalLexicon(morphologicalLexiconStream);
         }
 
         /**
@@ -260,6 +262,25 @@ namespace Dictionary.Dictionary
                 if (list.Length == 2)
                 {
                     _misspelledWords[list[0]] = list[1];
+                }
+
+                line = streamReader.ReadLine();
+            }
+        }
+
+        private void LoadMorphologicalLexicon(Stream stream)
+        {
+            var streamReader = new StreamReader(stream);
+            var line = streamReader.ReadLine();
+            while (line != null)
+            {
+                var list = line.Split(" ");
+                if (list.Length == 2)
+                {
+                    var word = (TxtWord) GetWord(list[0]);
+                    if (word != null){
+                        word.SetMorphology(list[1]);
+                    }
                 }
 
                 line = streamReader.ReadLine();

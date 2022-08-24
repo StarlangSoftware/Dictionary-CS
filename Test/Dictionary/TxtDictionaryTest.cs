@@ -23,6 +23,14 @@ namespace Test.Dictionary
         }
 
         [Test]
+        public void TestMorphology() {
+            Assert.AreEqual("ab", ((TxtWord) dictionary.GetWord("ab")).GetMorphology());
+            Assert.AreEqual("çarp+HcH+lHk", ((TxtWord) dictionary.GetWord("çarpıcılık")).GetMorphology());
+            Assert.AreEqual("aciz+lAş+yAbil+mA", ((TxtWord) dictionary.GetWord("âcizleşebilme")).GetMorphology());
+            Assert.AreEqual("ak+Hş+GAn+lAş+DHr+HCH+lHk", ((TxtWord) dictionary.GetWord("akışkanlaştırıcılık")).GetMorphology());
+        }
+
+        [Test]
         public void TestPrepareTrie()
         {
             var trie = dictionary.PrepareTrie();

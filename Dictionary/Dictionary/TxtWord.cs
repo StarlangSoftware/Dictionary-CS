@@ -6,6 +6,7 @@ namespace Dictionary.Dictionary
     public class TxtWord : Word, ICloneable
     {
         private List<string> flags;
+        private string morphology;
 
         /**
          * <summary>A constructor of {@link TxtWord} class which takes a String name as an input and calls its super class {@link Word}
@@ -65,6 +66,14 @@ namespace Dictionary.Dictionary
         public void RemoveFlag(string flag)
         {
             flags.Remove(flag);
+        }
+
+        public void SetMorphology(string morphology){
+            this.morphology = morphology;
+        }
+
+        public string GetMorphology(){
+            return morphology;
         }
 
         /**
