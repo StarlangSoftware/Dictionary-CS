@@ -6,11 +6,11 @@ namespace Dictionary.Dictionary
     public class TxtWord : Word, ICloneable
     {
         private List<string> flags;
-        private string morphology;
+        private string _morphology;
 
         /**
          * <summary>A constructor of {@link TxtWord} class which takes a String name as an input and calls its super class {@link Word}
-         * with given name. Then, creates a new {@link ArrayList} as flags.</summary>
+         * with given name. Then, creates a new {@link List} as flags.</summary>
          *
          * <param name="name">String name.</param>
          */
@@ -21,7 +21,7 @@ namespace Dictionary.Dictionary
 
         /**
          * <summary>Another constructor of {@link TxtWord} class which takes a String name and a flag as inputs and calls its super class {@link Word}
-         * with given name. Then, creates a new {@link ArrayList} as flags and calls addFlag method with given flag.</summary>
+         * with given name. Then, creates a new {@link List} as flags and calls addFlag method with given flag.</summary>
          *
          * <param name="name">String input.</param>
          * <param name="flag">String input.</param>
@@ -33,7 +33,7 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The clone method creates {@link TxtWord} type copy with name and add items of flags {@link ArrayList}  to the copy.</summary>
+         * <summary>The clone method creates {@link TxtWord} type copy with name and add items of flags {@link List}  to the copy.</summary>
          *
          * <returns>TxtWord type copy.</returns>
          */
@@ -49,7 +49,7 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The addFlag method takes a String flag as an input and adds given flag to the flags {@link ArrayList}.</summary>
+         * <summary>The addFlag method takes a String flag as an input and adds given flag to the flags {@link List}.</summary>
          *
          * <param name="flag">String input to add.</param>
          */
@@ -59,7 +59,7 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The removeFlag method takes a String flag as an input and removes given flag from the flags {@link ArrayList}.</summary>
+         * <summary>The removeFlag method takes a String flag as an input and removes given flag from the flags {@link List}.</summary>
          *
          * <param name="flag">String input to remove.</param>
          */
@@ -69,15 +69,15 @@ namespace Dictionary.Dictionary
         }
 
         public void SetMorphology(string morphology){
-            this.morphology = morphology;
+            this._morphology = morphology;
         }
 
         public string GetMorphology(){
-            return morphology;
+            return _morphology;
         }
 
         /**
-         * <summary>The verbType method checks flags {@link ArrayList} and returns the corresponding cases.</summary>
+         * <summary>The verbType method checks flags {@link List} and returns the corresponding cases.</summary>
          *
          * <returns>the corresponding cases.</returns>
          */
@@ -296,15 +296,15 @@ namespace Dictionary.Dictionary
 
         /**
          * <summary>The samePos method takes {@link TxtWord} as input and returns true if;
-         * flags {@link ArrayList} contains CL_ISIM
+         * flags {@link List} contains CL_ISIM
          * CL_ISIM: The bare-form of the word is a noun. e.g. Abla
-         * flags {@link ArrayList} contains CL_FIIL
+         * flags {@link List} contains CL_FIIL
          * CL_FIIL: The bare-form of the word is a verb. e.g. Affet
-         * flags {@link ArrayList} contains IS_ADJ
+         * flags {@link List} contains IS_ADJ
          * IS_ADJ: The bare-form of the word is a adjective. e.g. Acayip
-         * flags {@link ArrayList} contains IS_ZM
+         * flags {@link List} contains IS_ZM
          * IS_ZM: The bare-form of the word is a pronoun. e.g. Başkası
-         * flags {@link ArrayList} contains IS_ADVERB
+         * flags {@link List} contains IS_ADVERB
          * IS_ADVERB: The bare-form of the word is a adverb. e.g. Tekrar, açıktan, adeta</summary>
          *
          * <param name="word">{@link TxtWord} type input.</param>
@@ -341,9 +341,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isNominal method returns true if flags {@link ArrayList} contains CL_ISIM.</summary>
+         * <summary>The isNominal method returns true if flags {@link List} contains CL_ISIM.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains CL_ISIM.</returns>
+         * <returns>true if flags {@link List} contains CL_ISIM.</returns>
          */
         public bool IsNominal()
         {
@@ -351,9 +351,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isPassive method returns true if flags {@link ArrayList} contains PASSIVE-HN.</summary>
+         * <summary>The isPassive method returns true if flags {@link List} contains PASSIVE-HN.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains PASSIVE-HN.</returns>
+         * <returns>true if flags {@link List} contains PASSIVE-HN.</returns>
          */
         public bool IsPassive()
         {
@@ -361,23 +361,23 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isAbbreviation method returns true if flags {@link ArrayList} contains IS_KIS.</summary>
+         * <summary>The isAbbreviation method returns true if flags {@link List} contains IS_KIS.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_KIS.</returns>
+         * <returns>true if flags {@link List} contains IS_KIS.</returns>
          */
         public bool IsAbbreviation()
         {
             /*
-             IS_KIS: The bare-form of the word is an abbrevation which does not obey
+             IS_KIS: The bare-form of the word is an abbreviation which does not obey
              vowel harmony while taking suffixes. Örn. Ab
              */
             return flags.Contains("IS_KIS");
         }
 
         /**
-         * <summary>The isInterjection method returns true if flags {@link ArrayList} contains IS_INTERJ.</summary>
+         * <summary>The isInterjection method returns true if flags {@link List} contains IS_INTERJ.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_INTERJ.</returns>
+         * <returns>true if flags {@link List} contains IS_INTERJ.</returns>
          */
         public bool IsInterjection()
         {
@@ -388,9 +388,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isDuplicate method returns true if flags {@link ArrayList} contains IS_DUP.</summary>
+         * <summary>The isDuplicate method returns true if flags {@link List} contains IS_DUP.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_DUP.</returns>
+         * <returns>true if flags {@link List} contains IS_DUP.</returns>
          */
         public bool IsDuplicate()
         {
@@ -401,9 +401,29 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isHeader method returns true if flags {@link ArrayList} contains IS_HEADER.</summary>
+         * <summary>The isDuplicate method returns true if flags {@link List} contains IS_CODE.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_HEADER.</returns>
+         * <returns>true if flags {@link List} contains IS_CODE.</returns>
+         */
+        public bool IsCode()
+        {
+            return flags.Contains("IS_CODE");
+        }
+
+        /**
+         * <summary>The isDuplicate method returns true if flags {@link List} contains IS_METRIC.</summary>
+         *
+         * <returns>true if flags {@link List} contains IS_METRIC.</returns>
+         */
+        public bool IsMetric()
+        {
+            return flags.Contains("IS_METRIC");
+        }
+
+        /**
+         * <summary>The isHeader method returns true if flags {@link List} contains IS_HEADER.</summary>
+         *
+         * <returns>true if flags {@link List} contains IS_HEADER.</returns>
          */
         public bool IsHeader()
         {
@@ -411,9 +431,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isAdjective method returns true if flags {@link ArrayList} contains IS_ADJ.</summary>
+         * <summary>The isAdjective method returns true if flags {@link List} contains IS_ADJ.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_ADJ.</returns>
+         * <returns>true if flags {@link List} contains IS_ADJ.</returns>
          */
         public bool IsAdjective()
         {
@@ -421,9 +441,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isPureAdjective method returns true if flags {@link ArrayList} contains IS_PUREADJ.</summary>
+         * <summary>The isPureAdjective method returns true if flags {@link List} contains IS_PUREADJ.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_PUREADJ.</returns>
+         * <returns>true if flags {@link List} contains IS_PUREADJ.</returns>
          */
         public bool IsPureAdjective()
         {
@@ -431,9 +451,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isPronoun method returns true if flags {@link ArrayList} contains IS_ZM.</summary>
+         * <summary>The isPronoun method returns true if flags {@link List} contains IS_ZM.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_ZM.</returns>
+         * <returns>true if flags {@link List} contains IS_ZM.</returns>
          */
         public bool IsPronoun()
         {
@@ -444,9 +464,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isQuestion method returns true if flags {@link ArrayList} contains IS_QUES.</summary>
+         * <summary>The isQuestion method returns true if flags {@link List} contains IS_QUES.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_QUES.</returns>
+         * <returns>true if flags {@link List} contains IS_QUES.</returns>
          */
         public bool IsQuestion()
         {
@@ -456,9 +476,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isVerb method returns true if flags {@link ArrayList} contains CL_FIIL.</summary>
+         * <summary>The isVerb method returns true if flags {@link List} contains CL_FIIL.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains CL_FIIL.</returns>
+         * <returns>true if flags {@link List} contains CL_FIIL.</returns>
          */
         public bool IsVerb()
         {
@@ -466,9 +486,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isPortmanteau method returns true if flags {@link ArrayList} contains IS_BILEŞ.</summary>
+         * <summary>The isPortmanteau method returns true if flags {@link List} contains IS_BILEŞ.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_BILEŞ.</returns>
+         * <returns>true if flags {@link List} contains IS_BILEŞ.</returns>
          */
         public bool IsPortmanteau()
         {
@@ -479,9 +499,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isDeterminer method returns true if flags {@link ArrayList} contains IS_DET.</summary>
+         * <summary>The isDeterminer method returns true if flags {@link List} contains IS_DET.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_DET.</returns>
+         * <returns>true if flags {@link List} contains IS_DET.</returns>
          */
         public bool IsDeterminer()
         {
@@ -492,9 +512,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isConjunction method returns true if flags {@link ArrayList} contains IS_CONJ.</summary>
+         * <summary>The isConjunction method returns true if flags {@link List} contains IS_CONJ.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_CONJ.</returns>
+         * <returns>true if flags {@link List} contains IS_CONJ.</returns>
          */
         public bool IsConjunction()
         {
@@ -505,9 +525,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isAdverb method returns true if flags {@link ArrayList} contains IS_ADVERB.</summary>
+         * <summary>The isAdverb method returns true if flags {@link List} contains IS_ADVERB.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_ADVERB.</returns>
+         * <returns>true if flags {@link List} contains IS_ADVERB.</returns>
          */
         public bool IsAdverb()
         {
@@ -515,9 +535,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isPostP method returns true if flags {@link ArrayList} contains IS_POSTP.</summary>
+         * <summary>The isPostP method returns true if flags {@link List} contains IS_POSTP.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_POSTP.</returns>
+         * <returns>true if flags {@link List} contains IS_POSTP.</returns>
          */
         public bool IsPostP()
         {
@@ -528,9 +548,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isPortmanteauEndingWithSI method returns true if flags {@link ArrayList} contains IS_B_SI.</summary>
+         * <summary>The isPortmanteauEndingWithSI method returns true if flags {@link List} contains IS_B_SI.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_B_SI.</returns>
+         * <returns>true if flags {@link List} contains IS_B_SI.</returns>
          */
         public bool IsPortmanteauEndingWithSI()
         {
@@ -541,9 +561,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isPortmanteauFacedVowelEllipsis method returns true if flags {@link ArrayList} contains IS_B_UD.</summary>
+         * <summary>The isPortmanteauFacedVowelEllipsis method returns true if flags {@link List} contains IS_B_UD.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_B_UD.</returns>
+         * <returns>true if flags {@link List} contains IS_B_UD.</returns>
          */
         public bool IsPortmanteauFacedVowelEllipsis()
         {
@@ -555,9 +575,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isPortmanteauFacedSoftening method returns true if flags {@link ArrayList} contains IS_B_UD.</summary>
+         * <summary>The isPortmanteauFacedSoftening method returns true if flags {@link List} contains IS_B_UD.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_B_SD.</returns>
+         * <returns>true if flags {@link List} contains IS_B_SD.</returns>
          */
         public bool IsPortmanteauFacedSoftening()
         {
@@ -568,9 +588,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isSuffix method returns true if flags {@link ArrayList} contains EK.</summary>
+         * <summary>The isSuffix method returns true if flags {@link List} contains EK.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains EK.</returns>
+         * <returns>true if flags {@link List} contains EK.</returns>
          */
         public bool IsSuffix()
         {
@@ -581,9 +601,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isProperNoun method returns true if flags {@link ArrayList} contains IS_OA.</summary>
+         * <summary>The isProperNoun method returns true if flags {@link List} contains IS_OA.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_OA.</returns>
+         * <returns>true if flags {@link List} contains IS_OA.</returns>
          */
         public bool IsProperNoun()
         {
@@ -594,9 +614,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isPlural method returns true if flags {@link ArrayList} contains IS_CA.</summary>
+         * <summary>The isPlural method returns true if flags {@link List} contains IS_CA.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_CA.</returns>
+         * <returns>true if flags {@link List} contains IS_CA.</returns>
          */
         public bool IsPlural()
         {
@@ -608,9 +628,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isNumeral method returns true if flags {@link ArrayList} contains IS_SAYI.</summary>
+         * <summary>The isNumeral method returns true if flags {@link List} contains IS_SAYI.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_SAYI.</returns>
+         * <returns>true if flags {@link List} contains IS_SAYI.</returns>
          */
         public bool IsNumeral()
         {
@@ -621,9 +641,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isReal method returns true if flags {@link ArrayList} contains IS_REELSAYI.</summary>
+         * <summary>The isReal method returns true if flags {@link List} contains IS_REELSAYI.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_REELSAYI.</returns>
+         * <returns>true if flags {@link List} contains IS_REELSAYI.</returns>
          */
         public bool IsReal()
         {
@@ -631,9 +651,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isFraction method returns true if flags {@link ArrayList} contains IS_KESIR.</summary>
+         * <summary>The isFraction method returns true if flags {@link List} contains IS_KESIR.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_KESIR.</returns>
+         * <returns>true if flags {@link List} contains IS_KESIR.</returns>
          */
         public bool IsFraction()
         {
@@ -641,9 +661,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isTime method returns true if flags {@link ArrayList} contains IS_ZAMAN.</summary>
+         * <summary>The isTime method returns true if flags {@link List} contains IS_ZAMAN.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_ZAMAN.</returns>
+         * <returns>true if flags {@link List} contains IS_ZAMAN.</returns>
          */
         public bool IsTime()
         {
@@ -651,9 +671,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isDate method returns true if flags {@link ArrayList} contains IS_DATE.</summary>
+         * <summary>The isDate method returns true if flags {@link List} contains IS_DATE.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_DATE.</returns>
+         * <returns>true if flags {@link List} contains IS_DATE.</returns>
          */
         public bool IsDate()
         {
@@ -661,9 +681,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isPercent method returns true if flags {@link ArrayList} contains IS_PERCENT.</summary>
+         * <summary>The isPercent method returns true if flags {@link List} contains IS_PERCENT.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_PERCENT.</returns>
+         * <returns>true if flags {@link List} contains IS_PERCENT.</returns>
          */
         public bool IsPercent()
         {
@@ -671,9 +691,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isRange method returns true if flags {@link ArrayList} contains IS_RANGE.</summary>
+         * <summary>The isRange method returns true if flags {@link List} contains IS_RANGE.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_RANGE.</returns>
+         * <returns>true if flags {@link List} contains IS_RANGE.</returns>
          */
         public bool IsRange()
         {
@@ -681,9 +701,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isOrdinal method returns true if flags {@link ArrayList} contains IS_ORD.</summary>
+         * <summary>The isOrdinal method returns true if flags {@link List} contains IS_ORD.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_ORD.</returns>
+         * <returns>true if flags {@link List} contains IS_ORD.</returns>
          */
         public bool IsOrdinal()
         {
@@ -694,9 +714,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The notObeysVowelHarmonyDuringAgglutination method returns true if flags {@link ArrayList} contains IS_UU.</summary>
+         * <summary>The notObeysVowelHarmonyDuringAgglutination method returns true if flags {@link List} contains IS_UU.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_UU.</returns>
+         * <returns>true if flags {@link List} contains IS_UU.</returns>
          */
         public bool NotObeysVowelHarmonyDuringAgglutination()
         {
@@ -707,9 +727,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The obeysAndNotObeysVowelHarmonyDuringAgglutination method returns true if flags {@link ArrayList} contain IS_UUU.</summary>
+         * <summary>The obeysAndNotObeysVowelHarmonyDuringAgglutination method returns true if flags {@link List} contain IS_UUU.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_UUU.</returns>
+         * <returns>true if flags {@link List} contains IS_UUU.</returns>
          */
         public bool ObeysAndNotObeysVowelHarmonyDuringAgglutination()
         {
@@ -720,9 +740,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The rootSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD, F_SD.</summary>
+         * <summary>The rootSoftenDuringSuffixation method returns true if flags {@link List} contains IS_SD, F_SD.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_SD, F_SD.</returns>
+         * <returns>true if flags {@link List} contains IS_SD, F_SD.</returns>
          */
         public bool RootSoftenDuringSuffixation()
         {
@@ -730,9 +750,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The rootSoftenAndNotSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SDD.</summary>
+         * <summary>The rootSoftenAndNotSoftenDuringSuffixation method returns true if flags {@link List} contains IS_SDD.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_SDD.</returns>
+         * <returns>true if flags {@link List} contains IS_SDD.</returns>
          */
         public bool RootSoftenAndNotSoftenDuringSuffixation()
         {
@@ -743,9 +763,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The verbSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains F_SD.</summary>
+         * <summary>The verbSoftenDuringSuffixation method returns true if flags {@link List} contains F_SD.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains F_SD.</returns>
+         * <returns>true if flags {@link List} contains F_SD.</returns>
          */
         public bool VerbSoftenDuringSuffixation()
         {
@@ -756,9 +776,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The nounSoftenDuringSuffixation method returns true if flags {@link ArrayList} contains IS_SD.</summary>
+         * <summary>The nounSoftenDuringSuffixation method returns true if flags {@link List} contains IS_SD.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_SD.</returns>
+         * <returns>true if flags {@link List} contains IS_SD.</returns>
          */
         public bool NounSoftenDuringSuffixation()
         {
@@ -769,9 +789,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The endingKChangesIntoG method returns true if flags {@link ArrayList} contains IS_KG.</summary>
+         * <summary>The endingKChangesIntoG method returns true if flags {@link List} contains IS_KG.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_KG.</returns>
+         * <returns>true if flags {@link List} contains IS_KG.</returns>
          */
         public bool EndingKChangesIntoG()
         {
@@ -783,9 +803,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The isExceptional method returns true if flags {@link ArrayList} contains IS_EX.</summary>
+         * <summary>The isExceptional method returns true if flags {@link List} contains IS_EX.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_EX.</returns>
+         * <returns>true if flags {@link List} contains IS_EX.</returns>
          */
         public bool IsExceptional()
         {
@@ -796,9 +816,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The duplicatesDuringSuffixation method returns true if flags {@link ArrayList} contains IS_ST.</summary>
+         * <summary>The duplicatesDuringSuffixation method returns true if flags {@link List} contains IS_ST.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_ST.</returns>
+         * <returns>true if flags {@link List} contains IS_ST.</returns>
          */
         public bool DuplicatesDuringSuffixation()
         {
@@ -809,9 +829,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The duplicatesAndNotDuplicatesDuringSuffixation method returns true if flags {@link ArrayList} contains IS_STT.</summary>
+         * <summary>The duplicatesAndNotDuplicatesDuringSuffixation method returns true if flags {@link List} contains IS_STT.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_STT.</returns>
+         * <returns>true if flags {@link List} contains IS_STT.</returns>
          */
         public bool DuplicatesAndNotDuplicatesDuringSuffixation()
         {
@@ -822,9 +842,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The lastIdropsDuringSuffixation method returns true if flags {@link ArrayList} contains IS_UD.</summary>
+         * <summary>The lastIdropsDuringSuffixation method returns true if flags {@link List} contains IS_UD.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_UD.</returns>
+         * <returns>true if flags {@link List} contains IS_UD.</returns>
          */
         public bool LastIdropsDuringSuffixation()
         {
@@ -836,9 +856,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The lastIDropsAndNotDropDuringSuffixation method returns true if flags {@link ArrayList} contains IS_UDD</summary>
+         * <summary>The lastIDropsAndNotDropDuringSuffixation method returns true if flags {@link List} contains IS_UDD</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_UDD.</returns>
+         * <returns>true if flags {@link List} contains IS_UDD.</returns>
          */
         public bool LastIDropsAndNotDropDuringSuffixation()
         {
@@ -849,9 +869,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The takesRelativeSuffixKi method returns true if flags {@link ArrayList} contains IS_KI.</summary>
+         * <summary>The takesRelativeSuffixKi method returns true if flags {@link List} contains IS_KI.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_KI.</returns>
+         * <returns>true if flags {@link List} contains IS_KI.</returns>
          */
         public bool TakesRelativeSuffixKi()
         {
@@ -862,9 +882,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The takesRelativeSuffixKu method returns true if flags {@link ArrayList} contains IS_KU.</summary>
+         * <summary>The takesRelativeSuffixKu method returns true if flags {@link List} contains IS_KU.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_KU.</returns>
+         * <returns>true if flags {@link List} contains IS_KU.</returns>
          */
         public bool TakesRelativeSuffixKu()
         {
@@ -875,9 +895,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The consonantSMayInsertedDuringPossesiveSuffixation method returns true if flags {@link ArrayList} contains IS_SII.</summary>
+         * <summary>The consonantSMayInsertedDuringPossesiveSuffixation method returns true if flags {@link List} contains IS_SII.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_SII.</returns>
+         * <returns>true if flags {@link List} contains IS_SII.</returns>
          */
         public bool ConsonantSMayInsertedDuringPossesiveSuffixation()
         {
@@ -885,9 +905,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The lastIdropsDuringPassiveSuffixation method returns true if flags {@link ArrayList} contains F_UD.</summary>
+         * <summary>The lastIdropsDuringPassiveSuffixation method returns true if flags {@link List} contains F_UD.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains F_UD.</returns>
+         * <returns>true if flags {@link List} contains F_UD.</returns>
          */
         public bool LastIdropsDuringPassiveSuffixation()
         {
@@ -899,9 +919,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The vowelAChangesToIDuringYSuffixation method returns true if flags {@link ArrayList} contains F_GUD.</summary>
+         * <summary>The vowelAChangesToIDuringYSuffixation method returns true if flags {@link List} contains F_GUD.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains F_GUD.</returns>
+         * <returns>true if flags {@link List} contains F_GUD.</returns>
          */
         public bool VowelAChangesToIDuringYSuffixation()
         {
@@ -913,9 +933,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The vowelEChangesToIDuringYSuffixation method returns true if flags {@link ArrayList} contains F_GUDO.</summary>
+         * <summary>The vowelEChangesToIDuringYSuffixation method returns true if flags {@link List} contains F_GUDO.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains F_GUDO.</returns>
+         * <returns>true if flags {@link List} contains F_GUDO.</returns>
          */
         public bool VowelEChangesToIDuringYSuffixation()
         {
@@ -927,9 +947,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The takesSuffixIRAsAorist method returns true if flags {@link ArrayList} contains F_GIR.</summary>
+         * <summary>The takesSuffixIRAsAorist method returns true if flags {@link List} contains F_GIR.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains F_GIR.</returns>
+         * <returns>true if flags {@link List} contains F_GIR.</returns>
          */
         public bool TakesSuffixIRAsAorist()
         {
@@ -940,9 +960,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The takesSuffixDIRAsFactitive method returns true if flags {@link ArrayList} contains F_DIR.</summary>
+         * <summary>The takesSuffixDIRAsFactitive method returns true if flags {@link List} contains F_DIR.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains F_DIR.</returns>
+         * <returns>true if flags {@link List} contains F_DIR.</returns>
          */
         public bool TakesSuffixDIRAsFactitive()
         {
@@ -953,9 +973,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The showsSuRegularities method returns true if flags {@link ArrayList} contains IS_SU.</summary>
+         * <summary>The showsSuRegularities method returns true if flags {@link List} contains IS_SU.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains IS_SU.</returns>
+         * <returns>true if flags {@link List} contains IS_SU.</returns>
          */
         public bool ShowsSuRegularities()
         {
@@ -963,9 +983,9 @@ namespace Dictionary.Dictionary
         }
 
         /**
-         * <summary>The containsFlag method returns true if flags {@link ArrayList} contains flag.</summary>
+         * <summary>The containsFlag method returns true if flags {@link List} contains flag.</summary>
          *
-         * <returns>true if flags {@link ArrayList} contains flag.</returns>
+         * <returns>true if flags {@link List} contains flag.</returns>
          */
         public bool ContainsFlag(String flag)
         {
