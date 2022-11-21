@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using Math;
 
 namespace Dictionary.Dictionary
@@ -13,6 +15,25 @@ namespace Dictionary.Dictionary
          */
         public VectorizedDictionary(IComparer<Word> comparator) : base(comparator)
         {
+        }
+
+        public VectorizedDictionary(string fileName, IComparer<Word> comparator) : base(comparator)
+        {
+            var streamReader = new StreamReader(new FileStream(fileName, FileMode.Open));
+            var line = streamReader.ReadLine();
+            while (line != null)
+            {
+                var items = line.Split(" ");
+                var vector = new Vector(0, 0);
+                for (int i = 1; i < items.Length; i++){
+                    vector.Add(double.Parse(items[i]));
+                }
+                var vectorizedWord = new VectorizedWord(items[0], vector);
+                words.Add(vectorizedWord);
+                line = streamReader.ReadLine();
+            }
+            words.Sort(comparator);
+            streamReader.Close();
         }
 
         /**
