@@ -201,6 +201,10 @@ namespace Dictionary.Dictionary
             return TurkishLanguage.UPPERCASE_LETTERS.IndexOf(surfaceForm[0]) != -1;
         }
 
+        public static string ToCapital(string surfaceForm){
+            return surfaceForm.Substring(0, 1).ToUpper(new CultureInfo("tr")) + surfaceForm.Substring(1);
+        }
+
         /**
          * <summary>The isPunctuation method takes a String surfaceForm as an input and returns true if it is a punctuation, false otherwise.
          * Grave accent : \u0060
