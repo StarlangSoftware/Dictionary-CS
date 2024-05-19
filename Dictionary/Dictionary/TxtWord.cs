@@ -68,10 +68,18 @@ namespace Dictionary.Dictionary
             flags.Remove(flag);
         }
 
+        /// <summary>
+        /// Mutator for the inner morphology of the word.
+        /// </summary>
+        /// <param name="morphology">New inner morphology of the word.</param>
         public void SetMorphology(string morphology){
             this._morphology = morphology;
         }
 
+        /// <summary>
+        /// Accessor for the inner morphology of the word.
+        /// </summary>
+        /// <returns>Inner morphology of the word.</returns>
         public string GetMorphology(){
             return _morphology;
         }

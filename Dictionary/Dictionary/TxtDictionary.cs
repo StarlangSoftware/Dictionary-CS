@@ -19,6 +19,11 @@ namespace Dictionary.Dictionary
         {
         }
 
+        /// <summary>
+        /// Empty constructor of TxtDictionary class. Sets the WordComparator to TurkishWordComparator, loads the
+        /// default Turkish dictionary, Turkish misspellings file and Turkish morphological lexicon, which contains the
+        /// subword units to Turkish root words.
+        /// </summary>
         public TxtDictionary() : base(new TurkishWordComparator())
         {
             this.filename = "turkish_dictionary.txt";
@@ -268,6 +273,12 @@ namespace Dictionary.Dictionary
             }
         }
 
+        /// <summary>
+        /// Loads the morphological lexicon of a given language. Only Turkish is currently supported. Morphological lexicon
+        /// contains subwords (possibly meaningful words or metamorphemes) of each root word in the Turkish dictionary. For
+        /// example, abacılık has subwords aba+CH+LHK.
+        /// </summary>
+        /// <param name="stream">Morphological lexicon file</param>
         private void LoadMorphologicalLexicon(Stream stream)
         {
             var streamReader = new StreamReader(stream);

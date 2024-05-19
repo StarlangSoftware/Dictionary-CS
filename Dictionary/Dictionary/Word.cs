@@ -201,6 +201,11 @@ namespace Dictionary.Dictionary
             return TurkishLanguage.UPPERCASE_LETTERS.IndexOf(surfaceForm[0]) != -1;
         }
 
+        /// <summary>
+        /// Converts the given string into its capital form
+        /// </summary>
+        /// <param name="surfaceForm">Given string which will be converted to its capital form</param>
+        /// <returns>Capitalized form of the input string.</returns>
         public static string ToCapital(string surfaceForm){
             return surfaceForm.Substring(0, 1).ToUpper(new CultureInfo("tr")) + surfaceForm.Substring(1);
         }

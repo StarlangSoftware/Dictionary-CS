@@ -17,6 +17,13 @@ namespace Dictionary.Dictionary
         {
         }
 
+        /// <summary>
+        /// Another constructor of {@link VectorizedDictionary} class that takes a WordComparator and an input file
+        /// containing the word vectors as input. Line j contains an array of numbers that represent the word vector for
+        /// that corresponding word at index j.
+        /// </summary>
+        /// <param name="fileName">Name of the input file that contains the word vectors</param>
+        /// <param name="comparator">WordComparator input.</param>
         public VectorizedDictionary(string fileName, IComparer<Word> comparator) : base(comparator)
         {
             var streamReader = new StreamReader(new FileStream(fileName, FileMode.Open));
