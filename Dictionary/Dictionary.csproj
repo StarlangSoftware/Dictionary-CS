@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>1.0.17</PackageVersion>
+        <PackageVersion>1.0.18</PackageVersion>
         <PackageId>NlpToolkit-Dictionary</PackageId>
     </PropertyGroup>
 
@@ -23,6 +23,7 @@
 
     <ItemGroup>
       <PackageReference Include="NlpToolkit-Math" Version="1.0.5" />
+      <PackageReference Include="NlpToolkit-Util" Version="1.0.7" />
     </ItemGroup>
 
 </Project>

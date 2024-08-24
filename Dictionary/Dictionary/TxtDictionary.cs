@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using Util;
 
 namespace Dictionary.Dictionary
 {
     public class TxtDictionary : Dictionary, ICloneable
     {
-        private readonly Dictionary<string, string> _misspelledWords = new Dictionary<string, string>();
+        private Dictionary<string, string> _misspelledWords = new Dictionary<string, string>();
 
         /**
          * <summary>A constructor of {@link TxtDictionary} class which takes a {@link WordComparator} as an input and calls its super
@@ -259,18 +260,7 @@ namespace Dictionary.Dictionary
          */
         private void LoadMisspelledWords(Stream stream)
         {
-            var streamReader = new StreamReader(stream);
-            var line = streamReader.ReadLine();
-            while (line != null)
-            {
-                var list = line.Split(" ");
-                if (list.Length == 2)
-                {
-                    _misspelledWords[list[0]] = list[1];
-                }
-
-                line = streamReader.ReadLine();
-            }
+            _misspelledWords = FileUtils.ReadHashMap(stream);
         }
 
         /// <summary>
