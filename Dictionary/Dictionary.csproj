@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageVersion>1.0.18</PackageVersion>
         <PackageId>NlpToolkit-Dictionary</PackageId>
+        <TargetFrameworks>netcoreapp3.1;net8.0</TargetFrameworks>
     </PropertyGroup>
 
     <ItemGroup>
