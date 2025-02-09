@@ -4,11 +4,11 @@
 
         <IsPackable>false</IsPackable>
 
-        <TargetFrameworks>netcoreapp3.1;net8.0</TargetFrameworks>
+        <TargetFramework>net8.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="NlpToolkit-Util" Version="1.0.7" />
+        <PackageReference Include="NlpToolkit-Util" Version="1.0.8" />
         <PackageReference Include="nunit" Version="3.12.0" />
         <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
