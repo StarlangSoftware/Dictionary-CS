@@ -31,6 +31,12 @@ Each bare-form has a set of attributes. For instance, ‘abacı’ is a noun, th
 |F GUD, F_GUDO|The verb bare-form includes vowel reduction.|
 |F1P1, F1P1-NO-REF|A verb, and depending on this attribute, the verb can (or can not) take causative suffix, factitive suffix, passive suffix etc.|
 
+Simple Web Interface
+============
+[Turkish Dictionary Search Link 1](http://104.247.163.162/nlptoolkit/turkish-dictionary.html) [Turkish Dictionary Search Link 2](https://starlangsoftware.github.io/nlptoolkit-web-simple/turkish-dictionary.html)
+
+[Turkish MorphoLex Search Link 1](http://104.247.163.162/nlptoolkit/turkish-morphological-lexicon.html) [Turkish MorphoLex Search Link 2](https://starlangsoftware.github.io/nlptoolkit-web-simple/turkish-morphological-lexicon.html)
+
 Video Lectures
 ============
 
@@ -39,7 +45,7 @@ Video Lectures
 For Developers
 ============
 
-You can also see [Java](https://github.com/starlangsoftware/Dictionary), [Python](https://github.com/starlangsoftware/Dictionary-Py), [Cython](https://github.com/starlangsoftware/Dictionary-Cy), [C](https://github.com/starlangsoftware/Dictionary-C), [Swift](https://github.com/starlangsoftware/Dictionary-Swift), [Js](https://github.com/starlangsoftware/Dictionary-Js), or [C++](https://github.com/starlangsoftware/Dictionary-CPP) repository.
+You can also see [Java](https://github.com/starlangsoftware/Dictionary), [Python](https://github.com/starlangsoftware/Dictionary-Py), [Cython](https://github.com/starlangsoftware/Dictionary-Cy), [C](https://github.com/starlangsoftware/Dictionary-C), [Swift](https://github.com/starlangsoftware/Dictionary-Swift), [Js](https://github.com/starlangsoftware/Dictionary-Js), [Php](https://github.com/starlangsoftware/Dictionary-Php), or [C++](https://github.com/starlangsoftware/Dictionary-CPP) repository.
 
 ## Requirements
 
@@ -148,3 +154,63 @@ To syllabify the word, SyllableList class is used.
     	doi = "10.26615/978-954-452-056-4_156",
     	pages = "1364--1372",
 	}
+
+For Contibutors
+============
+
+### Resources
+1. Add resources to the project irectory. Do not forget to choose 'EmbeddedRecource' in 'Build Action' and 'Copy always' in 'Copy to output directory' in File Properties dialog. 
+   
+### C# files
+1. Do not forget to comment each function.
+```
+	/**
+	* <summary>Returns the first literal's name.</summary>
+	*
+	* <returns>the first literal's name.</returns>
+	*/
+	public string Representative()
+	{
+		return GetSynonym().GetLiteral(0).GetName();
+	}
+```
+2. Function names should follow pascal caml case.
+```
+	public string GetLongDefinition()
+```
+3. Write ToString methods, if necessary.
+4. Use var type as a standard type.
+```
+	public override bool Equals(object second)
+	{
+		var relation = (Relation) second;
+```
+5. Use standard naming for private and protected class variables. Use _ for private and capital for protected class members.
+```
+    public class SynSet
+    {
+        private string _id;
+		protected string Name;
+```
+6. Use NUnit for writing test classes. Use test setup if necessary.
+```
+   public class WordNetTest
+    {
+        WordNet.WordNet turkish;
+
+        [SetUp]
+        public void Setup()
+        {
+            turkish = new WordNet.WordNet();
+        }
+
+        [Test]
+        public void TestSynSetList()
+        {
+            var literalCount = 0;
+            foreach (var synSet in turkish.SynSetList()){
+                literalCount += synSet.GetSynonym().LiteralSize();
+            }
+            Assert.AreEqual(110259, literalCount);
+        }
+```
