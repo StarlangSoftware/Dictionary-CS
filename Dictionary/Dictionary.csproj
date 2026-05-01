@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>1.0.20</PackageVersion>
+        <PackageVersion>1.0.21</PackageVersion>
         <PackageId>NlpToolkit-Dictionary</PackageId>
         <TargetFramework>net8.0</TargetFramework>
     </PropertyGroup>

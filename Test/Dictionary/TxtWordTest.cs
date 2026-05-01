@@ -69,7 +69,7 @@ namespace Test.Dictionary
                 }
             }
 
-            Assert.AreEqual(30603, count);
+            Assert.AreEqual(30625, count);
         }
 
         [Test]
